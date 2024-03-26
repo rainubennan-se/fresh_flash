@@ -3,6 +3,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:fresh_flash/controller/provider/electronics_provider.dart';
 import 'package:fresh_flash/controller/provider/headlines_provider.dart';
 import 'package:fresh_flash/controller/provider/home_provider.dart';
+import 'package:fresh_flash/controller/provider/sports_provider.dart';
 import 'package:fresh_flash/view/bottom.dart';
 import 'package:fresh_flash/view/automobiles.dart';
 import 'package:provider/provider.dart';
@@ -20,7 +21,8 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (_) => HomeProvider()),
         ChangeNotifierProvider(create: (_) => HeadlinesProvider()),
-        ChangeNotifierProvider(create: (_) => ElectronicsProvider())
+        ChangeNotifierProvider(create: (_) => ElectronicsProvider()),
+        ChangeNotifierProvider(create: (_) => SportsProvider())
       ],
       child: MaterialApp(
         title: 'Flutter Demo',

@@ -10,7 +10,7 @@ class ServiceApi {
   Future<NewsApiResModel> fetchNews() async {
     final response = await http.get(
       Uri.parse(
-          'https://newsapi.org/v2/everything?q=tesla&from=2024-02-20&sortBy=publishedAt&apiKey=$APIKEY'),
+          'https://newsapi.org/v2/everything?q=tesla&from=2024-02-26&sortBy=publishedAt&apiKey=5169cff4fedd4e559678b7c7149a9a81'),
     );
 
     if (response.statusCode == 200) {
@@ -49,4 +49,19 @@ class ServiceApi {
       throw Exception('Failed to load news');
     }
   }
+  /// Sports
+    Future<NewsApiResModel> sports() async {
+    final response = await http.get(
+      Uri.parse(
+          'https://newsapi.org/v2/top-headlines?country=in&category=sports&apiKey=$APIKEY'),
+    );
+
+    if (response.statusCode == 200) {
+      print(response.statusCode);
+      return NewsApiResModel.fromJson(jsonDecode(response.body));
+    } else {
+      throw Exception('Failed to load news');
+    }
+  }
+  
 }
